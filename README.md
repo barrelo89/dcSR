@@ -1,1 +1,1 @@
-# dcSR: Practical Video Quality Enhancement using Data-CentricSuper-Resolution
+# dcSR: Practical Video Quality Enhancement using Data-Centric Super-Resolution
