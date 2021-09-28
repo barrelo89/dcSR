@@ -13,5 +13,6 @@ cd ffmpeg-4.2.1
 ls
 ```
 You can see the directory contains the following files.
+
 ![image](https://user-images.githubusercontent.com/25336939/135013433-94da5fbd-ff44-4c8a-9db6-c3197d85c4ed.png)
 
