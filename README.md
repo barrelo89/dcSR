@@ -9,7 +9,9 @@ This is the repository that contains all the python and ffmpeg source code for t
 2. Unzip "ffmpeg-X.X.X.tar" file (henceforth, we use "ffmpeg-4.2.1.tar").
 3. Navigate to 'ffmpeg-4.2.1/ffmpeg-4.2.1' and check the file in the path.
 ```
-cd ffmpeg-4.2.1/ffmpeg-4.2.1
+cd ffmpeg-4.2.1
 ls
 ```
+You can see the directory contains the following files.
+![image](https://user-images.githubusercontent.com/25336939/135013433-94da5fbd-ff44-4c8a-9db6-c3197d85c4ed.png)
 
