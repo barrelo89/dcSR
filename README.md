@@ -34,7 +34,7 @@ The integration is based on 'ffmpeg-4.2.1/doc/decode_video.c'.
 
 
 
-Once updating the source code is completed, you can run this command.
+Once updating the source code is completed, you can compile it with the following command (it may vary depending on your system set-up).
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
