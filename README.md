@@ -31,6 +31,7 @@ sudo make install
 ## How to integrate Super Resolution (SR) into H.264 decoding pipeline
 The key point of itegrating SR into H.264 decoding pipeline is to locate the decoded picture buffer (DPB). After wandering around the internet for a while, we could track down where the DPB is in the H.264 decoding pipeline source code.
 
+### Where H.264 decoding happens?
 
 The integration is based on 'ffmpeg-4.2.1/doc/decode_video.c'.
 
