@@ -4,6 +4,7 @@ This is the repository that contains all the python and ffmpeg source code for t
 ## Prerequisities
 - Environment: Ubuntu 16.04 or Ubuntu 18.04
 - Language: Python (Super Resolution), C (H264 Video Decoding)
+- Required Python packages: tensorflow, opencv
 - Need to install ['FFMPEG'](https://www.ffmpeg.org/download.html) from "source".
 
 ## How to install FFMPEG from source code
