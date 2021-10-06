@@ -51,7 +51,7 @@ The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_vid
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
-Suppose the compilation is successful, you can run the compiled program (./YOUR_APP_NAME INPUT_FILE_PATH OUTPUT_FILE_PREFIX). 
+Suppose the compilation is successful, you can run the compiled program (./YOUR_APP_NAME INPUT_H264_FILE_PATH OUTPUT_IMG_FILE_PREFIX). 
 ```
 ./my_app output_video018.h264 ppm
 ```
