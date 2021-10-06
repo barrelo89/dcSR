@@ -18,7 +18,7 @@ You can see the directory contains the following files.
 
 ![image](https://user-images.githubusercontent.com/25336939/135013433-94da5fbd-ff44-4c8a-9db6-c3197d85c4ed.png)
 
-4. Now, let's compile FFMPEG. But there is one thing to note before you run './configure' in command window. Since the H.264 is not enabled in default FFMPEG configuration, we need to configure FFMPEG with '--enable-gpl --enable-libx264' [reference](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu#:~:text=libx264,118%20then%20you%20can%20install%20that%20instead%20of%20compiling%3A)  
+4. Now, let's compile FFMPEG. But there is one thing to note before you run './configure' in command window. Since the H.264 is not enabled by default FFMPEG configuration, we need to configure FFMPEG with '--enable-gpl --enable-libx264' [reference](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu#:~:text=libx264,118%20then%20you%20can%20install%20that%20instead%20of%20compiling%3A)  
 ```
 ./configure --enable-gpl --enable-libx264
 ```
@@ -31,9 +31,17 @@ sudo make install
 ## How to integrate Super Resolution (SR) into H.264 decoding pipeline
 The key point of itegrating SR into H.264 decoding pipeline is to locate the decoded picture buffer (DPB). After wandering around the internet for a while, we could track down where the DPB is in the H.264 decoding pipeline source code.
 
-### Where H.264 decoding happens?
+### Where does H.264 decoding happen?
+Though the concept of video encoing/decoding is quite straight-forward, its whole engineering is very complicated. Especially, considering the fact that the actual decoding happens at "macro-block" level, it is way more complicated than it looks.
 
-The integration is based on 'ffmpeg-4.2.1/doc/decode_video.c'.
+After countless trial and errors, we finally figured out the actual decoding occurs in 'decode_simple_internal' method of 'ffmpeg-4.2.1/avcodec/decode.c'. 
+
+
+
+
+
+
+The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'.
 
 
 
