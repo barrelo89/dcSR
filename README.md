@@ -1,5 +1,5 @@
-# dcSR: Practical Video Quality Enhancement using Data-Centric Super-Resolution
-This is the repository that contains all the python and ffmpeg source code for the publication accepted in ACM CONEXT'21. You can access the paper through this link.
+# SR-FFMPEG
+This is the repository that contains all the python and ffmpeg source code for the publication, dcSR: Practical Video Quality Enhancement using Data-Centric Super-Resolution, accepted in ACM CONEXT'21. You can access the paper through this link.
 
 ## Prerequisities
 - Environment: Ubuntu 16.04 or Ubuntu 18.04
