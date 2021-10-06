@@ -36,7 +36,7 @@ Though the concept of video encoing/decoding is quite straight-forward, its whol
 
 After countless trial and errors, we finally figured out the actual decoding occurs in 'decode_simple_internal' method of 'ffmpeg-4.2.1/avcodec/decode.c'. As H.264 keeps the decoded picture buffer (DPB) for P and B frames, we access it via the following data structure.
 ```
-'H264Context *h = avctx->priv_data'. 
+H264Context *h = avctx->priv_data; 
 ```
 
 ### How to compile FFMPEG with SR enabled
