@@ -45,8 +45,9 @@ After countless trial and errors, we finally figured out the actual decoding occ
 
 ### How to Use SR-FFMPEG
 The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'. Once updating the source code is completed, you can compile 'decode_video.c' with the following command.
-*. it may vary depending on your system set-up.
-*. my_app can be replaced with your_application_name, e.g, SR-decoding
+#### Note:
+1. it may vary depending on your system set-up.
+2. my_app can be replaced with your_application_name, e.g, SR-decoding
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
