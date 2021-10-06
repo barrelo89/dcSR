@@ -43,7 +43,7 @@ H264Context *h = avctx->priv_data;
 1. Download 'decode.c' file in this github repository and replace the existing 'decode.c' in 'ffmpeg-4.2.1/avcodec/decode.c' with the downloaded one.
 2. On 'ffempg-4.2.1', re-compile and re-install FFMPEG
 
-### How to Use SR-FFMPEG
+### How to compile SR-FFMPEG
 The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'. Once updating the source code is completed, you need to change one line in 'decode_video.c' to specify the video codec to use. Around line #113, you can find the following line that set the video codec to MPEG1.  
 ```
 codec = avcodec_find_decoder(AV_CODEC_ID_MPEG1VIDEO);
@@ -52,15 +52,15 @@ To use H.264 codec, change the line above to the following.
 ```
 codec = avcodec_find_decoder(AV_CODEC_ID_H264);
 ```
-
-
-you can compile 'decode_video.c' with the following command.
+Then, you can compile 'decode_video.c' with the following command.
 #### Note:
 1. it may vary depending on your system set-up.
 2. my_app can be replaced with your_application_name, e.g, SR-decoding
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
+
+### How to use compiled SR-FFMPEG
 Suppose the compilation is successful, you can run the compiled program (./YOUR_APP_NAME INPUT_H264_FILE_PATH OUTPUT_IMG_FILE_PREFIX). 
 ```
 ./my_app output_video018.h264 ppm
