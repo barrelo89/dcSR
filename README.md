@@ -34,19 +34,19 @@ The key point of itegrating SR into H.264 decoding pipeline is to locate the dec
 ### Where does H.264 decoding happen?
 Though the concept of video encoing/decoding is quite straight-forward, its whole engineering is very complicated. Especially, considering the fact that the actual decoding happens at "macro-block" level, it is way more complicated than it looks.
 
-After countless trial and errors, we finally figured out the actual decoding occurs in 'decode_simple_internal' method of 'ffmpeg-4.2.1/avcodec/decode.c'. As H.264 keeps the decoded picture buffer (DPB) for P and B frames, we access it via 'H264Context *h = avctx->priv_data'. 
+After countless trial and errors, we finally figured out the actual decoding occurs in 'decode_simple_internal' method of 'ffmpeg-4.2.1/avcodec/decode.c'. As H.264 keeps the decoded picture buffer (DPB) for P and B frames, we access it via the following data structure.
+```
+'H264Context *h = avctx->priv_data'. 
+```
 
+### How to compile FFMPEG with SR enabled
+1. Download 'decode.c' file in this github repository and replace the existing 'decode.c' in 'ffmpeg-4.2.1/avcodec/decode.c' with the downloaded one.
+2. On 'ffempg-4.2.1', re-compile and re-install FFMPEG
 
-
-
-
-
-The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'.
-
-
-
-
-Once updating the source code is completed, you can compile it with the following command (it may vary depending on your system set-up).
+### How to Use SR-FFMPEG
+The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'. Once updating the source code is completed, you can compile 'decode_video.c' with the following command.
+*. it may vary depending on your system set-up.
+*. my_app can be replaced with your_application_name, e.g, SR-decoding
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
