@@ -59,11 +59,15 @@ Then, you can compile 'decode_video.c' with the following command.
 ```
 gcc decode_video.c -o my_app -L../../ -L/usr/bin -L/usr/local/lib ../../libswscale/libswscale.a ../../libavdevice/libavdevice.a ../../libavformat/libavformat.a ../../libavcodec/libavcodec.a ../../libavutil/libavutil.a -lpthread -lbz2 -lm -lz -lfaac -lmp3lame -lx264 -lfaad -lswresample -lm -lz -llzma  -lavutil -lX11
 ```
+As a result of this compilation, we now have an application, 'my_app' that applies SR process to I-frames.
 
 ### How to use compiled SR-FFMPEG
-Suppose the compilation is successful, you can run the compiled program (./YOUR_APP_NAME INPUT_H264_FILE_PATH OUTPUT_IMG_FILE_PREFIX). 
+Once the compilation is successful, you can run the compiled program. To use it, you need to specify two arguments:
+1. INPUT_H264_FILE_PATH
+2. OUTPUT_IMG_FILE_PREFIX
+If you run the following command, you will get output-xxx.ppm files decoded by SR-FFMPEG.  
 ```
-./my_app output_video018.h264 ppm
+./my_app output_video018.h264 output
 ```
 
 
