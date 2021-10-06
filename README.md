@@ -44,7 +44,17 @@ After countless trial and errors, we finally figured out the actual decoding occ
 2. On 'ffempg-4.2.1', re-compile and re-install FFMPEG
 
 ### How to Use SR-FFMPEG
-The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'. Once updating the source code is completed, you can compile 'decode_video.c' with the following command.
+The integration is based on the example code within 'ffmpeg-4.2.1/doc/decode_video.c'. Once updating the source code is completed, you need to change one line in 'decode_video.c' to specify the video codec to use. Around line #113, you can find the following line that set the video codec to MPEG1.  
+```
+codec = avcodec_find_decoder(AV_CODEC_ID_MPEG1VIDEO);
+```
+To use H.264 codec, change the line above to the following.
+```
+codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+```
+
+
+you can compile 'decode_video.c' with the following command.
 #### Note:
 1. it may vary depending on your system set-up.
 2. my_app can be replaced with your_application_name, e.g, SR-decoding
