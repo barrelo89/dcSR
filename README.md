@@ -69,6 +69,7 @@ If you run the following command, you will get output-xxx.ppm files decoded by S
 ```
 ./my_app output_video018.h264 output
 ```
+Based on this workflow, we use the parallel processing available in Python to enable both SR process and H.264 decoding process. Note that deploying SR models in FFMPEG itself can be feasible using tensorflow C API. However, due to lots of engineering involved and lack of documentation, we take the parallel processing approach. 
 
 
 
